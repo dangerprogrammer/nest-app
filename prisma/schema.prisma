@@ -12,15 +12,17 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-model User {
-  id           Int    @id @default(autoincrement())
+model Users {
+  id           Int      @id @default(autoincrement())
   name         String
   phone        String
-  cpf          Int
-  email        String @unique
+  cpf          String
+  email        String   @unique
   password     String
-  CEP          Int
+  CEP          String
   city         String
   neighborhood String
   state        String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
