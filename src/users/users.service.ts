@@ -13,9 +13,6 @@ export class UsersService {
   }
 
   async findAll() {
-    // return this.databaseService;
-    // console.log(this.databaseService.users);
-
     return await this.databaseService.users.findMany();
   }
 
